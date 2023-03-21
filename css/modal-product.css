@@ -1,0 +1,71 @@
+/* CSS модального окна */
+.modal-product {
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 100%;
+    padding: 32px 10px;
+    display: flex;
+}
+
+.modal-product__container {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-product__title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 12px;
+}
+
+.modal-product__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-product__image {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.modal-product__description {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+.modal-product__ingredients {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.modal-product__add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.modal-product__btn {
+    flex-grow: 1;
+    padding: 9px;
+    background-color: #ff7020;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.modal-product__price {
+    text-align: right;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+}

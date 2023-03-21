@@ -1,0 +1,35 @@
+/* Прописываем характеристики для модальных окон */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    overflow-y: auto; /*чтобы модальное окно скролилось по вертикали, если оно не помещается*/
+    display: none;
+}
+.modal_open {
+    display: flex;
+}
+
+/* Часть внутри, где будет распологаться весь контент */
+.modal__main {
+    position: relative; /*для размещения крестика*/
+    cursor: default;
+    margin: auto; /*так как родитель flex, margin выставить мод. окно по центру*/
+}
+
+.modal__close {
+    color: #b1b1b1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+}
+
+.modal__close:focus-visible {
+    color: #ff7020;
+    outline-color: #ff7020;
+    border-radius: 3px;
+}
