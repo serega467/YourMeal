@@ -51,6 +51,7 @@ fieldset {
     margin: 0;
     padding: 0;
     bottom: 0;
+    border: 0;
 }
 
 .visually-hidden {

@@ -1,0 +1,208 @@
+.modal-delivery {
+    --gap: 8px;
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 100%;
+    padding: 32px 10px;
+    display: flex;
+
+}
+
+.modal-delivery__container {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-delivery__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 18px;
+}
+
+.modal-delivery__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-grow: 1;
+    margin-bottom: 18px;
+}
+
+.modal-delivery__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.modal-delivery__fieldset_radio {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Создаем дополнительный класс для удобства JS-разработчика */
+.modal-delivery__fieldset_hide {
+    /* visibility: hidden; */
+}
+
+.modal-delivery__input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #f2f2f3;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 130%;
+    color: black;
+}
+
+.modal-delivery__input_half {
+
+    flex-basis: calc((100% - var(--gap)) / 2);
+}
+
+.modal-delivery__input::placeholder {
+    color: #b1b1b1;
+}
+
+.modal-delivery__label {
+    display: flex;
+    gap: 8px;
+}
+
+/* Начало создания радиокнопки */
+.modal-delivery__radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 12px;
+}
+
+.modal-delivery__radio:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #f2f2f3;
+}
+
+.modal-delivery__radio:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    left: 6px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Чтобы радиокнопка правильно переключалась */
+.modal-delivery__radio:checked::after {
+    opacity: 1;
+}
+
+.modal-delivery__submit {
+    width: 300px;
+    padding: 9px;
+    background-color: #ff7020;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #ffffff;
+
+    /* задаём скорость срабатывания псевдокласса active кнопки при нажатии на кнопку */
+    transition: transform .1s ease, background-color .3s ease-in-out;
+}
+
+.modal-delivery__submit:hover {
+    background-color: #ffab08;
+}
+
+.modal-delivery__submit:focus-visible {
+    background-color: #f86310;
+}
+
+.modal-delivery__submit:active {
+    /* чтобы при клике на кнопку появился эффект продавливания */
+    transform: translate(1px, 2px) ;
+}
+
+.modal-delivery__submit:disabled {
+    background-color: #f9f9f9;
+    color: #acacac;
+}
+
+@support not selector(:focus-visible) {
+    .modal-delivery__submit:focus {
+        background-color: #f86310;
+    }
+}
+
+@media (min-width: 480px) {
+    .modal-delivery {
+        max-width: 524px;
+        min-height: auto;
+        padding: 20px 16px 29px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+    }
+    
+    .modal-delivery__container {
+        margin-left: 0;
+    }
+    
+}
+
+/* Разделяем модальное окно на две половинки состоящие из двух цветов
+с размещением картинки .svg на заданном фоне */
+@media (min-width: 1024px) {
+    .modal-delivery {
+        max-width: 684px;
+        min-height: auto;
+        padding: 44px 24px 24px 366px;
+        background: url('../img/donut.svg') 19px center, linear-gradient(to right, #ffab08 50%, #fff 50% );
+        background-size: 302px, auto;
+        background-repeat: no-repeat;
+    }
+
+    .modal-delivery__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .modal-delivery__form {
+        margin-bottom: 32px;
+        gap: 16px;
+    }
+
+    .modal-delivery__input {
+        font-size: 12px;
+        padding: 10px 12px;
+        height: 40px;
+    }
+
+    .modal-delivery__label {
+        font-size: 12px;
+    }
+
+    .modal-delivery__fieldset_radio {
+        gap: 12px;
+    }
+    
+    .modal-delivery__submit {
+        font-size: 16px;
+    }
+}
